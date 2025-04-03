@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPUB player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <button id="load">Load book</button>
+    <iframe></iframe>
+    <div class="controls"><button id="playpause">Play</button></div>
+</body>
+<script type="module">
+    import { initMediaOverlay, repositionPlayback } from './mo-playback.js';
+    import { parsePackage } from './package.js';
+    let opf = './book/EPUB/package.opf';
+    let epubPackage = null;
+    let currentSpineItem = null;
+    let autoplay = false;
+    
+    // load the book
+    document.querySelector('#load').addEventListener('click', async e => {
+        await loadBook(opf);
+    });
+    document.querySelector("#playpause").addEventListener('click', e => {
+        let audioElm = document.querySelector('audio');
+        if (audioElm) {
+            if (e.target.textContent == 'Play') {
+                audioElm.play();
+            }
+            else {
+                audioElm.pause();
+            }
+        }
+    });
+    async function loadBook(opfPath) {
+        clearErrors();
+        // parse the spine
+        epubPackage = await parsePackage(new URL(opfPath, document.location.href).href);
+        currentSpineItem = epubPackage.spineItems[0];
+        let iframe = document.querySelector('iframe');
+        // listen for clicks in the content document, to reposition the playback
+        iframe.onload = () => {
+            iframe.contentDocument.addEventListener('click', e => {
+                repositionPlayback(e.target);
+            });
+        };
+        document.querySelector('iframe').src = currentSpineItem.url;
+        // setup the media overlay
+        loadMediaOverlay(currentSpineItem);            
+    }
+
+    function loadMediaOverlay(spineItem) {
+        // this player supports the new MO format, not SMIL
+        if (spineItem.mediaOverlays.find(mo => mo.mediaType == 'text/vtt') == undefined) {
+            showError("Format not supported");
+            return;
+        }
+        
+        initMediaOverlay(
+            currentSpineItem, 
+            epubPackage.metadata.find(m => m.property == 'media:active-class')?.value ?? '',
+            loadNextSpineItem
+        );
+        
+        let audioElm = document.querySelector('audio');
+        audioElm.addEventListener('pause', e => document.querySelector("#playpause").textContent = 'Play');
+        audioElm.addEventListener('play', e => document.querySelector("#playpause").textContent = 'Pause');
+
+        // if autoplay is on, start playback
+        if (autoplay) {
+            console.log("TODO start playback automatically");
+        }
+    }
+    function loadNextSpineItem() {
+        autoplay = true;
+        let currentSpineItemIdx = epubPackage.spineItems.findIndex(si => si.url == currentSpineItem.url);
+        if (epubPackage.spineItems.length - 1 > currentSpineItemIdx) {
+            let nextSpineItem = epubPackage.spineItems[currentSpineItemIdx + 1];
+            currentSpineItem = nextSpineItem;
+            // load next spine item
+            document.querySelector('iframe').src = currentSpineItem.url;
+            // setup the audio
+            loadMediaOverlay(currentSpineItem);
+        }
+    }
+    function showError(msg) {
+        let errElm = document.createElement('p');
+        errElm.textContent = msg;
+        errElm.className = 'error';
+        document.querySelector('body').appendChild(errElm);
+    }
+    function clearErrors() {
+        let errElms = document.querySelectorAll('.error');
+        for (let errElm of errElms) {
+            errElm.remove();
+        }
+    }
+    
+</script>
+</html>

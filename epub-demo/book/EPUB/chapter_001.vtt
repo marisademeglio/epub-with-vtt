@@ -1,0 +1,101 @@
+WEBVTT
+
+1
+00:00:24.500 --> 00:00:29.268
+{"selector":{"type":"FragmentSelector","value":"c01h01"}}
+
+2
+00:00:29.268 --> 00:00:30.397
+{"selector":{"type":"FragmentSelector","value":"c01s00001"}}
+
+3
+00:00:30.397 --> 00:00:44.783
+{"selector":{"type":"FragmentSelector","value":"c01s0002"}}
+
+4
+00:00:44.783 --> 00:00:50.450
+{"selector":{"type":"FragmentSelector","value":"c01s0003"}}
+
+5
+00:00:50.450 --> 00:01:24.300
+{"selector":{"type":"FragmentSelector","value":"c01s0004"}}
+
+6
+00:01:24.300 --> 00:01:27.850
+{"selector":{"type":"FragmentSelector","value":"c01s0005"}}
+
+7
+00:01:27.850 --> 00:01:35.000
+{"selector":{"type":"FragmentSelector","value":"c01s0006"}}
+
+8
+00:01:35.000 --> 00:01:37.500
+{"selector":{"type":"FragmentSelector","value":"c01s0007"}}
+
+9
+00:01:37.500 --> 00:01:46.450
+{"selector":{"type":"FragmentSelector","value":"c01s0008"}}
+
+10
+00:01:46.450 --> 00:02:14.138
+{"selector":{"type":"FragmentSelector","value":"c01p0002"}}
+
+11
+00:02:14.138 --> 00:03:02.000
+{"selector":{"type":"FragmentSelector","value":"c01p0003"}}
+
+12
+00:03:02.000 --> 00:03:45.500
+{"selector":{"type":"FragmentSelector","value":"c01p0004"}}
+
+13
+00:03:45.500 --> 00:04:29.300
+{"selector":{"type":"FragmentSelector","value":"c01p0005"}}
+
+14
+00:04:29.300 --> 00:06:52.500
+{"selector":{"type":"FragmentSelector","value":"c01p0006"}}
+
+15
+00:06:52.500 --> 00:08:32.500
+{"selector":{"type":"FragmentSelector","value":"c01p0007"}}
+
+16
+00:08:32.500 --> 00:09:30.500
+{"selector":{"type":"FragmentSelector","value":"c01p0008"}}
+
+17
+00:09:30.500 --> 00:10:22.750
+{"selector":{"type":"FragmentSelector","value":"c01p0009"}}
+
+18
+00:10:22.750 --> 00:11:11.750
+{"selector":{"type":"FragmentSelector","value":"c01p0010"}}
+
+19
+00:11:11.750 --> 00:12:27.500
+{"selector":{"type":"FragmentSelector","value":"c01p0011"}}
+
+20
+00:12:27.500 --> 00:12:31.900
+{"selector":{"type":"FragmentSelector","value":"c01p0012"}}
+
+21
+00:12:31.900 --> 00:12:34.500
+{"selector":{"type":"FragmentSelector","value":"c01p0013"}}
+
+22
+00:12:34.500 --> 00:12:37.400
+{"selector":{"type":"FragmentSelector","value":"c01p0014"}}
+
+23
+00:12:37.400 --> 00:13:23.000
+{"selector":{"type":"FragmentSelector","value":"c01p0015"}}
+
+24
+00:13:23.000 --> 00:14:18.800
+{"selector":{"type":"FragmentSelector","value":"c01p0016"}}
+
+25
+00:14:18.800 --> 00:14:45.000
+{"selector":{"type":"FragmentSelector","value":"c01p0017"}}

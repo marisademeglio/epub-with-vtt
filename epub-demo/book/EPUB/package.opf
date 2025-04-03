@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://www.idpf.org/2007/opf" version="3.0" xml:lang="en" unique-identifier="pub-id">
+    <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+        <dc:title id="title">Moby-Dick</dc:title>
+        <dc:creator id="creator">Herman Melville</dc:creator>
+        <dc:identifier id="pub-id">another-moby-dick-demo-101</dc:identifier>
+        <dc:language>en-US</dc:language>
+        <meta property="dcterms:modified">2025-04-01T01:13:00Z</meta>
+        <dc:publisher>Harper &amp; Brothers, Publishers</dc:publisher>
+        <dc:contributor id="contrib1">Dave Cramer</dc:contributor>
+        <dc:contributor id="contrib2">Marisa DeMeglio</dc:contributor>
+
+        <!--MEDIA OVERLAY METADATA-->
+        <meta property="media:duration" refines="#chapter_001_smil_overlay">0:14:20.500</meta>
+        <meta property="media:duration" refines="#chapter_002_smil_overlay">0:09:03.000</meta>
+        <meta property="media:duration" refines="#chapter_001_vtt_overlay">0:14:20.500</meta>
+        <meta property="media:duration" refines="#chapter_002_vtt_overlay">0:09:03.000</meta>
+        <meta property="media:duration" refines="#chapter_001_audio">0:14:20.500</meta>
+        <meta property="media:duration" refines="#chapter_002_audio">0:09:03.000</meta>
+        <meta property="media:duration">0:23:23.500</meta>
+        <meta property="media:narrator">Stuart Wills</meta>
+        <meta property="media:active-class">-epub-media-overlay-active</meta>
+    </metadata>
+    <manifest>
+        <item id="font.stix.regular" href="fonts/STIXGeneral.otf" media-type="application/vnd.ms-opentype"/>
+        <item id="font.stix.italic" href="fonts/STIXGeneralItalic.otf" media-type="application/vnd.ms-opentype"/>
+        <item id="font.stix.bold" href="fonts/STIXGeneralBol.otf" media-type="application/vnd.ms-opentype"/>
+        <item id="font.stix.bold.italic" href="fonts/STIXGeneralBolIta.otf" media-type="application/vnd.ms-opentype"/>
+        <item id="toc" properties="nav" href="toc.xhtml" media-type="application/xhtml+xml"/>
+        <item id="cover-image" properties="cover-image" href="images/9780316000000.jpg" media-type="image/jpeg"/>
+        <item id="style" href="css/stylesheet.css" media-type="text/css"/>
+        <item id="xchapter_001" href="chapter_001.xhtml" media-type="application/xhtml+xml" media-overlay="chapter_001_smil_overlay chapter_001_vtt_overlay chapter_001_audio"/>
+        <item id="xchapter_002" href="chapter_002.xhtml" media-type="application/xhtml+xml" media-overlay="chapter_002_smil_overlay chapter_002_vtt_overlay chapter_002_audio"/>
+        <item id="chapter_001_smil_overlay" href="chapter_001_overlay.smil" media-type="application/smil+xml"/>
+        <item id="chapter_002_smil_overlay" href="chapter_002_overlay.smil" media-type="application/smil+xml"/>
+        <item id="chapter_001_vtt_overlay" href="chapter_001.vtt" media-type="text/vtt"/>
+        <item id="chapter_002_vtt_overlay" href="chapter_002.vtt" media-type="text/vtt"/>
+        <item id="chapter_001_audio" href="audio/mobydick_001_002_melville.mp4#t=24.5,885" media-type="audio/mp4"/>
+        <item id="chapter_002_audio" href="audio/mobydick_001_002_melville.mp4#t=885,1428" media-type="audio/mp4"/>
+    </manifest>
+    <spine>
+        <itemref linear="yes" idref="xchapter_001"/>
+        <itemref linear="yes" idref="xchapter_002"/>
+    </spine>
+</package>
